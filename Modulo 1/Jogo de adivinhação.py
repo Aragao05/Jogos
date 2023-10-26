@@ -5,12 +5,23 @@ print("################################")
 print("Bem vindo ao jogo de adivinhação")
 print("################################")
 
-numero_secreto = random.randint(0,100)
-tentativas = 3
+dificuldade = int(input("Você quer jogar em que nivel de dificuldade?\n Facil (1), Medio (2), Dificil (3)"))
+
+if (dificuldade == 1):
+    nivel = 10
+    tentativas = 2
+elif(dificuldade == 2):
+    nivel = 30
+    tentativas = 3
+else:
+    nivel = 50
+    tentativas = 5
+
+numero_secreto = random.randrange(0,nivel)
 
 for i in range(0,tentativas):
     rodada = i + 1
-    print("Tentativa numero {} de 3".format(rodada))
+    print("Tentativa numero {} de {}".format(rodada,tentativas))
     print("Digite um numero entre 1 e 100")
     chute = int(input("Digite o numero:"))
 
@@ -31,4 +42,4 @@ for i in range(0,tentativas):
         elif(maior):
             print("\nVoce errou, o numero é maior\n")
     
-print("Fim do jogo")
+print(f"Fim do jogo o numero sorteado era:{numero_secreto}")
