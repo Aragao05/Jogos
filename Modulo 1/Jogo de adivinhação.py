@@ -18,6 +18,7 @@ else:
     tentativas = 5
 
 numero_secreto = random.randrange(0,nivel)
+pontos = 1000
 
 for i in range(0,tentativas):
     rodada = i + 1
@@ -39,7 +40,12 @@ for i in range(0,tentativas):
     else:
         if (menor):
             print("\nVoce errou, o numero é menor\n")
+            pontos_perdidos = abs(numero_secreto - chute)
+            pontos = pontos - pontos_perdidos
         elif(maior):
             print("\nVoce errou, o numero é maior\n")
-    
+            pontos_perdidos = abs(numero_secreto - chute)
+            pontos = pontos - pontos_perdidos
+
+    print(f"Você fez {pontos} pontos")
 print(f"Fim do jogo o numero sorteado era:{numero_secreto}")
