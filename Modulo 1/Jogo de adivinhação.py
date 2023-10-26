@@ -1,10 +1,11 @@
 #Jogo de Adivinhação
+import random
 
 print("################################")
 print("Bem vindo ao jogo de adivinhação")
 print("################################")
 
-numero_secreto = 42
+numero_secreto = random.randint(0,100)
 tentativas = 3
 
 for i in range(0,tentativas):
