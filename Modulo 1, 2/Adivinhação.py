@@ -35,7 +35,7 @@ def jogar():
 
         #caso digite um numero maior ou menor que o permitido exibe a mensagem
         if (chute < 1 or chute > 100):
-            print("Voce deve digitar um numero entre 1 e 100")
+            print("Voce deve digitar um numero entre 1 e 100\n")
             continue
         
         #se acertou entra nesse
@@ -46,11 +46,11 @@ def jogar():
         # maior ou menor que o numero sorteado 
         else:
             if (menor):
-                print("\nVoce errou, o numero é menor\n")
+                print("Voce errou, o numero é menor\n")
                 pontos_perdidos = abs(numero_secreto - chute)
                 pontos = pontos + pontos_perdidos
             elif(maior):
-                print("\nVoce errou, o numero é maior\n")
+                print("Voce errou, o numero é maior\n")
                 pontos_perdidos = abs(numero_secreto - chute)
                 pontos = pontos + pontos_perdidos
         # saber se o jogador acertou ou errou o numero
