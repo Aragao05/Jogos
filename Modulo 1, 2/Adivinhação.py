@@ -23,8 +23,8 @@ def jogar():
 
     # O for serve pra rodar as tentativas 
     for i in range(0,tentativas):
-        rodada = i + 1
-        print("Tentativa numero {} de {}".format(rodada,tentativas))
+        rodada = i + 1 # i + 1 porque i começa do 0, e rodada zero não fica legal 
+        print(f"Tentativa numero {rodada} de {tentativas}")
         print("Digite um numero entre 1 e 100")
         chute = int(input("Digite o numero:"))
 
@@ -33,7 +33,7 @@ def jogar():
         menor = chute > numero_secreto
         maior = chute < numero_secreto
 
-        #caso digite um numero maior ou menor que o permitido exibe a mensagem
+        #caso digite um numero maior que 100 e menor que 1 exibe a mensagem 
         if (chute < 1 or chute > 100):
             print("Voce deve digitar um numero entre 1 e 100\n")
             continue
@@ -53,7 +53,10 @@ def jogar():
                 print("Voce errou, o numero é maior\n")
                 pontos_perdidos = abs(numero_secreto - chute)
                 pontos = pontos + pontos_perdidos
-        # saber se o jogador acertou ou errou o numero
+
+        #se não acertar imprime a mensagem
+        if tentativas == rodada:
+            print("Voce perdeu!")
 
     print(f"Você fez {pontos} pontos")
     print(f"Fim do jogo o numero sorteado era:{numero_secreto}")

@@ -109,8 +109,9 @@ def jogar():
     imprime_recepção()
     palavra_secreta = SortearPalavra()
 
+    #cria a as linhas em baixo de cada palavra
     for i in palavra_secreta:
-        letras_acertadas.append("_")
+        letras_acertadas.append("_") #.append adiciona algo no fim de uma lista
         
     print(letras_acertadas)
 
@@ -122,10 +123,10 @@ def jogar():
     while(not enforcou and not acertou):
         
         chute = input("Qual a letra?:")
-        chute = chute.strip().upper()
+        chute = chute.strip().upper() #.strip() remove algo da string, no caso se tiver algum espaço, ,upper deixa a string toda em maiusculo
         letras_digitadas.append(chute)
 
-        #Confere se o digitou uma letra que contem na palavra ou não
+        #Confere se o digitou uma letra que contem na palavra
         #se acertou coloca a letra na lista que contem a palavra salva
         if chute in palavra_secreta:
             posiçao = 0
